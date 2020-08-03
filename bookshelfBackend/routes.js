@@ -43,11 +43,11 @@ app.post('/api/books/search', (req, res) => {
     data.push(`%${req.body.author}%`);
   }
   if(req.body.minLength) {
-    sql += ' AND (length > ?)';
+    sql += ' AND (length >= ?)';
     data.push(req.body.minLength);
   }
   if(req.body.maxLength) {
-    sql += ' AND (length < ?)';
+    sql += ' AND (length <= ?)';
     data.push(req.body.maxLength);
   }
   if(req.body.genre) {
