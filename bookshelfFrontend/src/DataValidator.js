@@ -11,7 +11,7 @@ const DataValidator = {
       error = true;
       errorMessage = 'Please limit to 40 characters.';
     }
-    else if(!/^[a-zA-Z0-9 <>/`'",;:+-_&%#@!\\^$.|?*+()]+$/.test(title)) {
+    else if(title !== '' && (!/^[a-zA-Z0-9 <>/`'",;:+-_&%#@!\\^$.|?*+()]+$/.test(title))) {
       error = true;
       errorMessage = "You've entered an invalid character.";
     }
@@ -49,6 +49,11 @@ const DataValidator = {
 
   length: function(length, search) {
     let error, errorMessage;
+    if(length === '' && search){
+      error = false;
+      errorMessage = '';
+      return [error, errorMessage];
+    }
     length = Number(length);
     if (isNaN(length)) {
       error = true;
@@ -58,25 +63,13 @@ const DataValidator = {
       error = true;
       errorMessage = 'Please enter a whole number.';
     }
-    else if(search) {
-      if(length < 0 || length >= 10000) {
-        error = true;
-        errorMessage = 'Must be between 1 and 9999.';
-      }
-      else {
-        error = false;
-        errorMessage = '';
-      }
+    else if (length <= 0 || length >= 10000) {
+      error = true;
+      errorMessage = 'Must be between 1 and 9999.';
     }
     else {
-      if(length > 0 && length < 10000) {
-        error = false;
-        errorMessage = '';
-      }
-      else {
-        error = true;
-        errorMessage = 'Must be between 1 and 9999.';
-      }
+      error = false;
+      errorMessage = '';
     }
     return [error, errorMessage];
   },
