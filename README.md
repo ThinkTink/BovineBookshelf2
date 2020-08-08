@@ -7,7 +7,7 @@
 * [Credits](#credits)
 
 ## Overview
-This app is a virtual bookshelf that manages a collection of books around a given theme. The books can be displayed and filtered with different search terms. Books can also be added, edited, and deleted. The front end is built using React, Material-UI, and Axios, and the back end is built using Node with Express and MySQL2. A front-end only version using localStorage and without filtering is available live at [https://thinktink.github.io/BovineBookshelf/.](https://thinktink.github.io/BovineBookshelf/)
+This app is a virtual bookshelf that manages a collection of books around a given theme. The books can be displayed and filtered with different search terms. Books can also be added, edited, and deleted. The front end is built using React, Material-UI, and Axios, and the back end is built using Node with Express and MySQL2. [Click here](https://bovinebookshelf2.herokuapp.com) to view a read-only version live.
 
 ![Screenshot of application](./Screenshot.png)
 
